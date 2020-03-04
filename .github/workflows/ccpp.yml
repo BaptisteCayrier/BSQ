@@ -5,10 +5,16 @@ on: [push]
 jobs:
   build:
 
-    runs-on: docker-criterion
+    runs-on: tommoulard/criterion
     
     steps:
     - uses: actions/checkout@v2
+    - name: install_ppa_criterion
+      run: sudo add-apt-repository ppa:snaipewastaken/ppa
+    - name: update apt-get
+      run: sudo apt-get update
+    - name: install_criterion
+      run: sudo apt-get install criterion-dev
     - name: make
       run: make
     - name: make tests_run
