@@ -26,7 +26,7 @@ CC	=	gcc
 
 CFLAGS	=	-W -Wall -Wextra -I ./lib/my/
 
-LDFLAGS	=	-lcriterion
+LDFLAGS	=	-lcriterion -fPIC
 
 LIB	=	-L. lib/my/libmy.a
 
